@@ -1,0 +1,223 @@
+@font-face {
+    font-family: poppins;
+    src: url(fonts/poppins.TTF);
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "poppins", sans-serif;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #dddfeb;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    background: #1f2847;
+    padding: 30px;
+    overflow: hidden;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.heading {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+
+label {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    background: #fff;
+    color: #1f2847;
+    outline: none;
+    margin-bottom: 20px;
+    font-size: 14px;
+    text-transform: capitalize;
+}
+
+.btn {
+    width: 100%;
+    height: 60px;
+    background: #0c80ef;
+    border-radius: 10px;
+    border: none;
+    margin-top: 20px;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all .3s linear;
+}
+
+.btn:hover {
+    background: #0a6bc5;
+}
+
+.btn:disabled {
+    background: #576081;
+    cursor: not-allowed;
+}
+
+.hide {
+    display: none;
+}
+
+.timer {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.timer .progress {
+    width: 100%;
+    height: 40px;
+    background: transparent;
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 10px;
+    border: 3px solid #3f4868;
+}
+
+.timer .progress .progress-bar {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+    background: linear-gradient(to right, #ea517c, #b478f1);
+    transition: 1s linear;
+}    
+
+.timer .progress .progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.question-wrapper .number {
+    color: #a2aace;
+    font-size: 25px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.question-wrapper .number .total-ques {
+    color: #576081;
+    font-size: 18px;
+}
+
+.question-wrapper .question { 
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.answer-wrapper .answer {
+    width: 100%;
+    height: 60px;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    border: 3px solid #3f4868;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: .3s linear;
+}
+
+.answer .ans-checkbox {
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    padding: 10px;
+    border: 3px solid #3f4868;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s;
+}
+
+.answer .ans-checkbox .icon {
+    opacity: 0;
+}
+
+/* .answer.selected: means div with both class in one div */
+/* hover effect only work on .ans-checkbox when .checked is not in div or when div with .answer.selected class */
+.answer:hover:not(.checked) .ans-checkbox,
+.answer.selected .ans-checkbox {
+    background: #0c80ef;
+    border-color: #0c80ef;
+}
+
+.answer.selected .ans-checkbox .icon {
+    opacity: 1;
+}
+
+.answer.correct {
+    border-color: #0cef2a;
+}
+
+.answer.wrong {
+    border-color: #fc3939;
+}
+
+.btn.next {
+    /* Show when answer submit */
+    display: none;
+}
+
+.end-screen .score {
+    font-size: 25px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.end-screen .score-text {
+    color: #a2aace;
+    font-size: 12px;
+    margin-bottom: 120px;
+}
+
+@media (max-width: 468px) {
+    .container {
+        min-height: 100vh;
+        max-width: 100%;
+        border-radius: 0;
+    }
+}
